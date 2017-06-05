@@ -16,6 +16,7 @@
 - [그룹 생성](#room_create)
 - [그룹 삭제](#room_remove)
 - [그룹 정보](#room_info)
+- [유저 등급 설정]($room_user_rank)
 - [그룹 가입](#room_join)
 - [그룹 탈퇴](#room_unjoin)
 
@@ -25,6 +26,9 @@
 
 기능
 - [타임라인](#timeline)
+
+---
+
 
 ## 유저
 ##### 유저 회원가입 <a id="user_create">
@@ -207,6 +211,22 @@
 | :--------------- | :------------------ |
 | json(PB_ROOM)    | PB_ROOM 테이블 확인  |
 | FAIL             | 실패                 |
+
+##### 유저 등급 설정 <a id="room_user_rank">
+ http://lemontree.dothome.co.kr/pinbox/room/room_user_rank
+
+| param        | desc         |
+| :----------- | :----------- |
+| user_token   | 유저 토큰     |
+| room_token   | 방 토큰       |
+| target_token | 대상 토큰     |
+| rank         | 등급     |
+
+| return           | desc                     |
+| :--------------- | :----------------------- |
+| SUCCESS          | PB_ROOM 테이블 확인       |
+| FAIL             | 실패                     |
+| RANK_FAIL        | 본인보다 높은 등급에 있음  |
 
 ##### 그룹 가입 <a id="room_join">
  http://lemontree.dothome.co.kr/pinbox/room/room_join
