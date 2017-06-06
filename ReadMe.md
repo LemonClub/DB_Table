@@ -6,6 +6,7 @@
 - [유저 팔로우](#user_follow)
 - [유저 팔로우 중인지 확인](#user_is_following)
 - [유저 언팔로우](#user_unfollow)
+- [유저 탈퇴]
 
 글
 - [글 쓰기](#bbs_write)
@@ -23,6 +24,7 @@
 댓글
 - [댓글 쓰기](#comment_write)
 - [댓글 가져오기](#comment_bring)
+- [댓글 삭제]
 
 기능
 - [타임라인](#timeline)
@@ -34,32 +36,32 @@
 ##### 유저 회원가입 <a id="user_create">
  http://lemontree.dothome.co.kr/pinbox/user/user_create
 
-| param      | desc         |
-| :--------- | :----------- |
-| user_name   | 이름        |
-| user_id  | 아이디        |
-| user_pw   | 비밀번호       |
-| user_email   | 이메일       |
-| user_sex   | 성별 (0 : 남자,   1 : 여자)      |
-| user_age   | 나이       |
-| user_phone  | 전화번호      |
-| user_profile  | 프로필 이미지      |
+| param         | desc                       |
+| :------------ | :------------------------- |
+| user_name     | 이름                       |
+| user_id       | 아이디                     |
+| user_pw       | 비밀번호                   |
+| user_email    | 이메일                     |
+| user_sex      | 성별 (0 : 남자,   1 : 여자) |
+| user_age      | 나이                       |
+| user_phone    | 전화번호                   |
+| user_profile  | 프로필 이미지               |
 
-| return      | desc         |
-| :--------- | :----------- |
-| SUCCESS   | 성공          |
-| FAIL       | 실패          |
-| PHONE_FAIL       | 이미 핸드폰 계정 있음          |
-| EMAIL_FAIL       | 이미 이메일 계정 있음          |
-| ID_FAIL       | 이미 아이디 계정 있음          |
+| return     | desc                          |
+| :--------- | :---------------------------- |
+| SUCCESS    | 성공                          |
+| FAIL       | 실패                          |
+| PHONE_FAIL | 이미 핸드폰 계정 있음          |
+| EMAIL_FAIL | 이미 이메일 계정 있음          |
+| ID_FAIL    | 이미 아이디 계정 있음          |
 
 ##### 유저 로그인 <a id="user_login">
  http://lemontree.dothome.co.kr/pinbox/user/user_login
 
 | param      | desc         |
 | :--------- | :----------- |
-| user_id   | 유저 아이디        |
-| user_pw | 유저 비밀번호       |
+| user_id    | 유저 아이디   |
+| user_pw    | 유저 비밀번호 |
 
 | return     | desc         |
 | :--------- | :----------- |
@@ -71,39 +73,39 @@
 
 | param      | desc         |
 | :--------- | :----------- |
-| user_id   | 유저 아이디        |
+| user_id    | 유저 아이디   |
 
-| return      | desc         |
-| :--------- | :----------- |
-| json(LA_USER)   | LA_USER 테이블 확인   |
-| FAIL       | 실패          |
+| return          | desc                |
+| :-------------- | :------------------ |
+| json(LA_USER)   | LA_USER 테이블 확인  |
+| FAIL            | 실패                |
 
 ##### 유저 팔로우 <a id="user_follow">
  http://lemontree.dothome.co.kr/pinbox/user/user_follow
 
-| param      | desc         |
-| :--------- | :----------- |
-| user_token   | 유저        |
-| target_token  | 팔로우 할 타겟        |
+| param        | desc            |
+| :----------- | :-------------- |
+| user_token   | 유저            |
+| target_token | 팔로우 할 타겟   |
 
-| return      | desc         |
+| return     | desc         |
 | :--------- | :----------- |
-| SUCCESS   | 성공          |
-| FAIL       | 실패          |
+| SUCCESS    | 성공         |
+| FAIL       | 실패         |
 
 ##### 유저 팔로우 중인지 확인 <a id="user_is_following">
  http://lemontree.dothome.co.kr/pinbox/user/user_is_following
 
-| param      | desc         |
-| :--------- | :----------- |
-| user_token   | 유저        |
-| target_token  | 팔로우 할 타겟        |
+| param        | desc          |
+| :----------- | :------------ |
+| user_token   | 유저          |
+| target_token | 팔로우 할 타겟 |
 
-| return      | desc         |
-| :--------- | :----------- |
-| ALREADY_FOLLOW   | 팔로우 중임   |
-| UN_FOLLOW   | 팔로우 중 아님   |
-| FAIL       | 실패          |
+| return           | desc          |
+| :--------------- | :------------ |
+| ALREADY_FOLLOW   | 팔로우 중임    |
+| UN_FOLLOW        | 팔로우 중 아님 |
+| FAIL             | 실패          |
 
 ##### 유저 팔로우 해제 <a id="user_unfollow">
  http://lemontree.dothome.co.kr/pinbox/user/user_unfollow
