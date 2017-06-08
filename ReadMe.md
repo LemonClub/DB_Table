@@ -6,7 +6,7 @@
 - [유저 팔로우](#user_follow)
 - [유저 팔로우 중인지 확인](#user_is_following)
 - [유저 언팔로우](#user_unfollow)
-- [유저 탈퇴]
+- [유저 탈퇴](#user_remove)
 
 글
 - [글 쓰기](#bbs_write)
@@ -120,6 +120,20 @@
 | SUCCESS            | 성공                 |
 | FAIL               | 실패                 |
 | ALREADY_UNFOLLOW   | 이미 언 팔로우 중임   |
+
+##### 유저 팔로우 해제 <a id="user_remove">
+ http://lemontree.dothome.co.kr/pinbox/user/user_remove
+
+| param      | desc         |
+| :--------- | :----------- |
+| user_id    | 유저 아이디   |
+| user_pw    | 유저 비밀번호 |
+
+| return             | desc                        |
+| :----------------- | :-------------------------- |
+| SUCCESS            | 성공                        |
+| FAIL               | 실패                        |
+| WRONG_ID           | 아이디 또는 비밀번호가 틀림   |
 
 
 ## 글
