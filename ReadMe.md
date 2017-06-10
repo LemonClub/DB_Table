@@ -24,7 +24,7 @@
 댓글
 - [댓글 쓰기](#comment_write)
 - [댓글 가져오기](#comment_bring)
-- [댓글 삭제]
+- [댓글 삭제](#comment_remove)
 
 기능
 - [타임라인](#timeline)
@@ -171,11 +171,10 @@
 ##### 글 삭제 <a id="bbs_remove">
  http://lemontree.dothome.co.kr/pinbox/bbs/bbs_remove
 
-| param      | desc         |
-| :--------- | :----------- |
-| bbs_idx    | 게시글 번호   |
-| user_token | 유저 토큰     |
-| room_token | 방 토큰       |
+| param       | desc                        |
+| :---------- | :-------------------------- |
+| bbs_idx     | 게시글 번호                  |
+| user_id     | 삭제를 요청한 유저의 아이디   |
 
 | return      | desc         |
 | :--------- | :----------- |
@@ -304,6 +303,19 @@
 | json(PB_COMMENT)    | PB_COMMENT 테이블 확인   |
 | FAIL                | 실패                     |
 | NOT_FOUND           | 댓글 없음                |
+
+##### 댓글 삭제 <a id="comment_remove">
+ http://lemontree.dothome.co.kr/pinbox/comment/comment_remove
+
+| param         | desc                       |
+| :------------ | :------------------------- |
+| comment_idx   | 댓글 idx                   |
+| user_id       | 글삭제 요청한 사람의 아이디  |
+
+| return              | desc                    |
+| :------------------ | :---------------------- |
+| SUCCESS             | 성공                    |
+| FAIL                | 실패                     |
 
 
 
