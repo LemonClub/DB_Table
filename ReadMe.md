@@ -12,6 +12,7 @@
 - [글 쓰기](#bbs_write)
 - [글 가져오기](#bbs_bring)
 - [글 삭제](#bbs_remove)
+- [글 수정]
 
 그룹
 - [그룹 생성](#room_create)
@@ -20,20 +21,23 @@
 - [유저 등급 설정]($room_user_rank)
 - [그룹 가입](#room_join)
 - [그룹 탈퇴](#room_unjoin)
+- [그룹 수정]
 
 댓글
 - [댓글 쓰기](#comment_write)
 - [댓글 가져오기](#comment_bring)
 - [댓글 삭제](#comment_remove)
+- [댓글 수정]
 
 기능
 - [타임라인](#timeline)
+
 
 ---
 
 
 ## 유저
-##### 유저 회원가입 <a id="user_create">
+#### 유저 회원가입 <a id="user_create">
  http://lemontree.dothome.co.kr/pinbox/user/user_create
 
 | param         | desc                       |
@@ -55,7 +59,7 @@
 | EMAIL_FAIL | 이미 이메일 계정 있음          |
 | ID_FAIL    | 이미 아이디 계정 있음          |
 
-##### 유저 로그인 <a id="user_login">
+#### 유저 로그인 <a id="user_login">
  http://lemontree.dothome.co.kr/pinbox/user/user_login
 
 | param      | desc         |
@@ -68,7 +72,7 @@
 | SUCCESS    | 성공          |
 | FAIL       | 실패          |
 
-##### 유저 정보 가져오기 <a id="user_info">
+#### 유저 정보 가져오기 <a id="user_info">
  http://lemontree.dothome.co.kr/pinbox/user/user_info
 
 | param      | desc         |
@@ -80,7 +84,7 @@
 | json(LA_USER)   | LA_USER 테이블 확인  |
 | FAIL            | 실패                |
 
-##### 유저 팔로우 <a id="user_follow">
+#### 유저 팔로우 <a id="user_follow">
  http://lemontree.dothome.co.kr/pinbox/user/user_follow
 
 | param        | desc            |
@@ -93,7 +97,7 @@
 | SUCCESS    | 성공         |
 | FAIL       | 실패         |
 
-##### 유저 팔로우 중인지 확인 <a id="user_is_following">
+#### 유저 팔로우 중인지 확인 <a id="user_is_following">
  http://lemontree.dothome.co.kr/pinbox/user/user_is_following
 
 | param        | desc          |
@@ -107,7 +111,7 @@
 | UN_FOLLOW        | 팔로우 중 아님 |
 | FAIL             | 실패          |
 
-##### 유저 팔로우 해제 <a id="user_unfollow">
+#### 유저 팔로우 해제 <a id="user_unfollow">
  http://lemontree.dothome.co.kr/pinbox/user/user_unfollow
 
 | param      | desc         |
@@ -121,7 +125,7 @@
 | FAIL               | 실패                 |
 | ALREADY_UNFOLLOW   | 이미 언 팔로우 중임   |
 
-##### 유저 팔로우 해제 <a id="user_remove">
+#### 유저 팔로우 해제 <a id="user_remove">
  http://lemontree.dothome.co.kr/pinbox/user/user_remove
 
 | param      | desc         |
@@ -139,8 +143,10 @@
 
 > ※ 본 기능을 사용하기 전에 [#room_unjoin](#room_unjoin) 을 먼저 호출하고 SUCCESS 받아올 것
 
+---
+
 ## 글
-##### 글 쓰기 <a id="bbs_write">
+#### 글 쓰기 <a id="bbs_write">
  http://lemontree.dothome.co.kr/pinbox/bbs/bbs_write
 
 | param      | desc         |
@@ -154,7 +160,7 @@
 | SUCCESS    | 성공          |
 | FAIL       | 실패          |
 
-##### 글 가져오기 <a id="bbs_bring">
+#### 글 가져오기 <a id="bbs_bring">
  http://lemontree.dothome.co.kr/pinbox/bbs/bbs_bring
 
 | param      | desc         |
@@ -168,23 +174,23 @@
 | FAIL         | 실패          |
 | NOT_FOUND    | 글 못찾음     |
 
-##### 글 삭제 <a id="bbs_remove">
+#### 글 삭제 <a id="bbs_remove">
  http://lemontree.dothome.co.kr/pinbox/bbs/bbs_remove
 
 | param       | desc                        |
 | :---------- | :-------------------------- |
 | bbs_idx     | 게시글 번호                  |
-| user_id     | 삭제를 요청한 유저의 아이디   |
+| user_token  | 글삭제 요청한 사람의 토큰     |
 
 | return      | desc         |
 | :--------- | :----------- |
 | SUCCESS    | 성공          |
 | FAIL       | 실패          |
 
-
+---
 
 ## 그룹
-##### 그룹 생성 <a id="room_create">
+#### 그룹 생성 <a id="room_create">
  http://lemontree.dothome.co.kr/pinbox/room/room_create
 
 | param            | desc                              |
@@ -204,7 +210,7 @@
 | FAIL       | 실패                  |
 | NAME_FAIL  | 이미 해당 이름이 있음  |
 
-##### 그룹 삭제 <a id="room_remove">
+#### 그룹 삭제 <a id="room_remove">
  http://lemontree.dothome.co.kr/pinbox/room/room_remove
 
 | param      | desc         |
@@ -218,7 +224,7 @@
 | FAIL        | 실패                           |
 | CANT_REMOVE | 없는 방 토큰이거나 매니저가 아님 |
 
-##### 그룹 정보 <a id="room_info">
+#### 그룹 정보 <a id="room_info">
  http://lemontree.dothome.co.kr/pinbox/room/room_info
 
 | param      | desc         |
@@ -230,7 +236,7 @@
 | json(PB_ROOM)    | PB_ROOM 테이블 확인  |
 | FAIL             | 실패                 |
 
-##### 유저 등급 설정 <a id="room_user_rank">
+#### 유저 등급 설정 <a id="room_user_rank">
  http://lemontree.dothome.co.kr/pinbox/room/room_user_rank
 
 | param        | desc         |
@@ -246,7 +252,7 @@
 | FAIL             | 실패                     |
 | RANK_FAIL        | 본인보다 높은 등급에 있음  |
 
-##### 그룹 가입 <a id="room_join">
+#### 그룹 가입 <a id="room_join">
  http://lemontree.dothome.co.kr/pinbox/room/room_join
 
 | param      | desc         |
@@ -261,7 +267,7 @@
 | MEM_LIMIT  | 인원 초과      |
 | NOT_FOUND_ROOM  | 없는 방      |
 
-##### 그룹 탈퇴 <a id="room_unjoin">
+#### 그룹 탈퇴 <a id="room_unjoin">
  http://lemontree.dothome.co.kr/pinbox/room/room_unjoin
 
 | param      | desc         |
@@ -275,9 +281,10 @@
 | FAIL            | 실패         |
 | NOT_FOUND_ROOM  | 없는 방      |
 
+---
 
 ## 댓글
-##### 댓글 쓰기 <a id="comment_write">
+#### 댓글 쓰기 <a id="comment_write">
  http://lemontree.dothome.co.kr/pinbox/comment/comment_write
 
 | param      | desc            |
@@ -291,7 +298,7 @@
 | SUCCESS    | 성공         |
 | FAIL       | 실패         |
 
-##### 댓글 가져오기 <a id="comment_bring">
+#### 댓글 가져오기 <a id="comment_bring">
  http://lemontree.dothome.co.kr/pinbox/comment/comment_bring
 
 | param      | desc         |
@@ -304,23 +311,23 @@
 | FAIL                | 실패                     |
 | NOT_FOUND           | 댓글 없음                |
 
-##### 댓글 삭제 <a id="comment_remove">
+#### 댓글 삭제 <a id="comment_remove">
  http://lemontree.dothome.co.kr/pinbox/comment/comment_remove
 
 | param         | desc                       |
 | :------------ | :------------------------- |
 | comment_idx   | 댓글 idx                   |
-| user_id       | 글삭제 요청한 사람의 아이디  |
+| user_token    | 글삭제 요청한 사람의 토큰    |
 
 | return              | desc                    |
 | :------------------ | :---------------------- |
 | SUCCESS             | 성공                    |
 | FAIL                | 실패                     |
 
-
+---
 
 ## 기능
-##### 타임라인 <a id="timeline">
+#### 타임라인 <a id="timeline">
  http://lemontree.dothome.co.kr/pinbox/edition/timeline
 
 | param      | desc         |
