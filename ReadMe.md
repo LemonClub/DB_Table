@@ -12,7 +12,7 @@
 - [글 쓰기](#bbs_write)
 - [글 가져오기](#bbs_bring)
 - [글 삭제](#bbs_remove)
-- [글 수정]
+- [글 수정](#bbs_rewrite)
 
 그룹
 - [그룹 생성](#room_create)
@@ -179,11 +179,27 @@
 
 | param       | desc                        |
 | :---------- | :-------------------------- |
+| room_token  | 방 토큰                      |
 | bbs_idx     | 게시글 번호                  |
 | user_token  | 글삭제 요청한 사람의 토큰     |
 
 | return      | desc         |
-| :--------- | :----------- |
+| :--------- | :------------ |
+| SUCCESS    | 성공          |
+| FAIL       | 실패          |
+| NO_ACCESS  | 권한 없는 유저 |
+
+#### 글 수정 <a id="bbs_rewrite">
+ http://lemontree.dothome.co.kr/pinbox/bbs/bbs_rewrite
+
+| param       | desc                        |
+| :---------- | :-------------------------- |
+| bbs_idx     | 게시글 번호                  |
+| content     | 내용                        |
+| user_token  | 글삭제 요청한 사람의 토큰     |
+
+| return      | desc         |
+| :--------- | :------------ |
 | SUCCESS    | 성공          |
 | FAIL       | 실패          |
 
@@ -322,7 +338,8 @@
 | return              | desc                    |
 | :------------------ | :---------------------- |
 | SUCCESS             | 성공                    |
-| FAIL                | 실패                     |
+| FAIL                | 실패                    |
+| NO_ACCESS           | 권한 없는 유저           |
 
 ---
 
