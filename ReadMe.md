@@ -27,7 +27,7 @@
 - [댓글 쓰기](#comment_write)
 - [댓글 가져오기](#comment_bring)
 - [댓글 삭제](#comment_remove)
-- [댓글 수정]
+- [댓글 수정](#comment_rewrite)
 
 기능
 - [타임라인](#timeline)
@@ -341,6 +341,19 @@
 | FAIL                | 실패                    |
 | NO_ACCESS           | 권한 없는 유저           |
 
+#### 댓글 수정 <a id="comment_rewrite">
+ http://lemontree.dothome.co.kr/pinbox/comment/comment_rewrite
+
+| param      | desc            |
+| :--------- | :-------------- |
+| bbs_idx    | 글 idx          |
+| content    | 내용            |
+| writer     | 작성한 유저 토큰 |
+
+| return     | desc         |
+| :--------- | :----------- |
+| SUCCESS    | 성공         |
+| FAIL       | 실패         |
 ---
 
 ## 기능
