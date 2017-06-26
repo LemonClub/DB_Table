@@ -21,7 +21,7 @@
 - [유저 등급 설정]($room_user_rank)
 - [그룹 가입](#room_join)
 - [그룹 탈퇴](#room_unjoin)
-- [그룹 수정]
+- [그룹 수정](#room_rewrite)
 
 댓글
 - [댓글 쓰기](#comment_write)
@@ -224,7 +224,6 @@
 | :--------- | :------------------- |
 | SUCCESS    | 성공                  |
 | FAIL       | 실패                  |
-| NAME_FAIL  | 이미 해당 이름이 있음  |
 
 #### 그룹 삭제 <a id="room_remove">
  http://lemontree.dothome.co.kr/pinbox/room/room_remove
@@ -296,6 +295,26 @@
 | SUCCESS         | 성공         |
 | FAIL            | 실패         |
 | NOT_FOUND_ROOM  | 없는 방      |
+
+#### 그룹 수정 <a id="room_rewrite">
+ http://lemontree.dothome.co.kr/pinbox/room/room_rewrite
+
+ | param            | desc                              |
+ | :--------------- | :-------------------------------- |
+ | room_token       | 방 토큰                           |
+ | room_name        | 방 이름                           |
+ | room_min_age     | 최소 연령 설정                     |
+ | room_max_age     | 최대 연령 설정                     |
+ | room_profile     | 방 프로필 이미지                   |
+ | room_memlimit    | 방 인원수 제한                     |
+ | room_private     | 방 공개 여부 (기본 : false : 공개)  |
+ | room_tag_0 ~ 4   | 방 태그들                          |
+ | room_greeting    | 방 소개 인사                       |
+
+ | return      | desc                |
+ | :--------- | :------------------- |
+ | SUCCESS    | 성공                  |
+ | FAIL       | 실패                  |
 
 ---
 
